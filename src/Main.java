@@ -1,6 +1,5 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 /**
  * 
@@ -17,7 +16,7 @@ public class Main {
 
 	}
 	
-	public void input(){
+	public static void input(){
 		try {
 		
 		} catch (Exception exception) {
@@ -25,11 +24,18 @@ public class Main {
 		}
 	}
 	
-	public void process(Grafo grafo){
+	public static void process(Grafo grafo){
 		try {
 		} catch (Exception exception) {
 			exception.printStackTrace();
 		}	
+	}
+	
+	public static void print(Grafo grafo){
+		try {
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}
 	}
 
 	public static void main(String[] args) {
@@ -38,9 +44,9 @@ public class Main {
 			String linha = "";
 			BufferedReader br = new BufferedReader(new InputStreamReader(
 					System.in));
+			Grafo grafo = new Grafo();
 			while ((linha = br.readLine()) != null) {
 				StringTokenizer tokenizer = new StringTokenizer(linha);
-				Grafo grafo = new Grafo();
 				grafo.a = Integer.parseInt(tokenizer.nextToken().trim());
 				grafo.v = Integer.parseInt(tokenizer.nextToken().trim());
 				grafo.arestas = new int[grafo.a];
@@ -51,8 +57,8 @@ public class Main {
 				for (i = 0; i < grafo.v; i++) {
 					linha = br.readLine();
 					tokenizer = new StringTokenizer(linha);
-					a = Integer.parseInt(tokenizer.nextToken());
-					v = Integer.parseInt(tokenizer.nextToken());
+					a = Integer.parseInt(tokenizer.nextToken().trim());
+					v = Integer.parseInt(tokenizer.nextToken().trim());
 					if (++(grafo.arestas[a - 1]) > maximo)
 						maximo++;
 					if (++(grafo.arestas[v - 1]) > maximo)
