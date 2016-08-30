@@ -1,72 +1,58 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
-/**
- * 
- * @author Diovani Bernardi da Motta Data: 30/08/2016 Data: 30/08/2016
- *         Implementacao do problema SPOJ - 818 AeroPorto
- */
-public class Main {
+class Main {
+    public static void main(String[] args) throws NumberFormatException, IOException {
+        Main processando = new Main();
+        processando.processa();
+       
+        System.exit(0);
+    }
+   
+    void processa() throws NumberFormatException, IOException {
+        String line = "";
+       
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-	private static class Grafo {
-
-		public int a;
-		public int v;
-		public int[] arestas;
-
-	}
-	
-	public void input(){
-		try {
-		
-		} catch (Exception exception) {
-			exception.printStackTrace();
-		}
-	}
-	
-	public void process(Grafo grafo){
-		try {
-		} catch (Exception exception) {
-			exception.printStackTrace();
-		}	
-	}
-
-	public static void main(String[] args) {
-		try {
-			int teste = 0, i, maximo, a, v;
-			String linha = "";
-			BufferedReader br = new BufferedReader(new InputStreamReader(
-					System.in));
-			while ((linha = br.readLine()) != null) {
-				StringTokenizer tokenizer = new StringTokenizer(linha);
-				Grafo grafo = new Grafo();
-				grafo.a = Integer.parseInt(tokenizer.nextToken().trim());
-				grafo.v = Integer.parseInt(tokenizer.nextToken().trim());
-				grafo.arestas = new int[grafo.a];
-				maximo = 0;
-				teste++;
-				for (i = 0; i < grafo.a; i++)
-					grafo.arestas[i] = 0;
-				for (i = 0; i < grafo.v; i++) {
-					linha = br.readLine();
-					tokenizer = new StringTokenizer(linha);
-					a = Integer.parseInt(tokenizer.nextToken());
-					v = Integer.parseInt(tokenizer.nextToken());
-					if (++(grafo.arestas[a - 1]) > maximo)
-						maximo++;
-					if (++(grafo.arestas[v - 1]) > maximo)
-						maximo++;
-				}
-				System.out.println(String.format("Teste %d\n", teste));
-				for (i = 0; i < grafo.a; i++)
-					if (grafo.arestas[i] == maximo)
-						System.out.print(String.format("%d ", i + 1));
-				System.out.println("\n");
-			}
-			System.exit(0);
-		} catch (Exception exception) {
-			exception.printStackTrace();
-		}
-	}
+        int[] vetor = new int[100];
+        int contador = 0;       
+        while((line = br.readLine()) != null) {
+            StringTokenizer tokenizer = new StringTokenizer(line);
+            int aeroportos = Integer.valueOf(tokenizer.nextToken());
+            int voos = Integer.valueOf(tokenizer.nextToken());
+           
+            if (aeroportos == 0 && voos == 0) {
+                return;
+            }
+           
+            contador++;
+            System.out.println("Teste " + contador);
+           
+            for (int i = 0; i < aeroportos; i++) {
+                vetor[i] = 0;
+            }
+            for (int i = 0; i < voos; i++) {
+                line = br.readLine();
+                tokenizer = new StringTokenizer(line);
+                int a = Integer.valueOf(tokenizer.nextToken());
+                int b = Integer.valueOf(tokenizer.nextToken());
+                vetor[a-1]++;
+                vetor[b-1]++;               
+            }
+            int maior = -1;
+            for (int i = 0; i < aeroportos; i++) {
+                if (vetor[i] > maior) {
+                    maior = vetor[i];
+                }           
+            }
+            for (int i = 0; i < aeroportos; i++) {
+                if (vetor[i] == maior) {
+                    System.out.print(i+1 + " ");
+                }           
+            }
+            System.out.println("\n");
+        }
+                   
+        return;
+    }
 }
