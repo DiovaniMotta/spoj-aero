@@ -2,6 +2,11 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+/**
+ * 
+ * @author Diovani Bernardi da Motta Data: 30/08/2016 Data: 30/08/2016
+ *         Implementacao do problema SPOJ - 818 AeroPorto
+ */
 public class Main {
 
 	private static class Grafo {
@@ -10,6 +15,21 @@ public class Main {
 		public int v;
 		public int[] arestas;
 
+	}
+	
+	public void input(){
+		try {
+		
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}
+	}
+	
+	public void process(Grafo grafo){
+		try {
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}	
 	}
 
 	public static void main(String[] args) {
