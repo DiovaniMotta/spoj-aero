@@ -9,7 +9,7 @@ import java.util.*;
  * 
  * AERO - Aeroporto A crescente utilizacao do transporte aereo preocupa os
  * especialistas, que preveem que o congestionamento em aeroportos podera se
- * tornar um grande problema no futuro. Os numeros atuais já sao alarmantes:
+ * tornar um grande problema no futuro. Os numeros atuais ja sao alarmantes:
  * relatorios oficiais demonstram que na Europa, em junho de 2001, houve uma
  * media de 7.000 atrasos de voos por dia. Preocupada com a previsao dos seus
  * especialistas em trafego aereo, a Associacao de Transporte Aereo
@@ -30,10 +30,10 @@ import java.util.*;
  * e Y, indicando que ha um voo do aeroporto X para o aeroporto Y. O final da
  * entrada e indicado quando A = V = 0.
  * 
- * Saída Para cada conjunto de teste da entrada seu programa deve produzir tres
- * linhas. A primeira linha identifica o conjunto de teste, no formato “Teste
- * n”, onde n é numerado a partir de 1. A segunda linha deve conter o
- * identificador do aeroporto que possui maior tráfego aéreo. Caso mais de um
+ * Saida Para cada conjunto de teste da entrada seu programa deve produzir tres
+ * linhas. A primeira linha identifica o conjunto de teste, no formato Teste
+ * n, onde n e numerado a partir de 1. A segunda linha deve conter o
+ * identificador do aeroporto que possui maior trafego aereo. Caso mais de um
  * aeroporto possua este valor maximo, voce deve listar todos estes aeroportos,
  * em ordem crescente de identificacao, e separados por pelo menos um espaco em
  * branco. A terceira linha deve ser deixada em branco. A grafia mostrada no
@@ -90,12 +90,11 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		input();
-		System.exit(0);
 	}
 
 
 	/**
-	 * Responsavel por invocar o método que irá verificar o aeroporto que tem maior probabilidade de possuir congestionamento
+	 * Responsavel por invocar o metodo que ira verificar o aeroporto que tem maior probabilidade de possuir congestionamento
 	 * impressao no console dos dados processados na busca
 	 * 
 	 * @param grafo
